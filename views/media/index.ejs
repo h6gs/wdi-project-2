@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Media Home</h1>
+  <ul>
+    <% media.forEach(medium => { %>
+      <a href="/media/<%= medium.id %>">
+      <li><%= medium.name %></li>
+      </a>
+      <% }); %>
+    </ul>
+</div>

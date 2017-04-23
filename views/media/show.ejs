@@ -1,0 +1,8 @@
+<div class="container">
+  <h1><%= medium.name %></h1>
+  <p><%= medium.synopsis %></p>
+  <form action="/media/<%= medium.id %>" method="post" class="">
+    <input type="hidden" name="_method" value="delete">
+    <button class="">Delete</button>
+    <a class="" href="/media/<%= medium.id %>/edit">Edit</a>
+  </div>

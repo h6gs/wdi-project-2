@@ -3,20 +3,43 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <title>WDI Project 2</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="/js/client.js" charset="utf-8"></script>
+  <title>HypeFlix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="/js/app.js" charset="utf-8"></script>
 </head>
 <body>
-  <main>
-    <%- body %>
-  </main>
-  <footer>
-    Up
-  </footer>
-</body>
-</html>
+  <header>
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <a href="/media" class="brand-logo">HypeFlix</a>
+
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">&#9776;</i></a>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/media">Home</a></li>
+          <li><a href="/media/new">Add Project</a></li>
+
+          <% if(locals.isLoggedIn) { %>
+            <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% } else { %>
+              <li class="nav-item">
+              <a class="nav-link" href="/login">Log In</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/register">Register</a>
+              </li>
+              <% } %>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <%- body %>
+      </main>
+      <footer>
+      </footer>
+    </body>
+    </html>
