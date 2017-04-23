@@ -1,8 +1,10 @@
 <div class="container">
   <h1><%= medium.name %></h1>
   <p><%= medium.synopsis %></p>
+  <img class="responsive-img" src="<%= medium.images %>">
   <form action="/media/<%= medium.id %>" method="post" class="">
+    <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
     <input type="hidden" name="_method" value="delete">
-    <button class="">Delete</button>
-    <a class="" href="/media/<%= medium.id %>/edit">Edit</a>
-  </div>
+    <button class="btn red">Delete</button>
+  </form>
+</div>
