@@ -8,6 +8,7 @@ const mediumSchema = new mongoose.Schema({
   comments: { type: String},
   upVotes: { type: String},
   downVotes: { type: String},
+  imdbRating: { type: String},
   images: [{ type: String }]
 });
 
