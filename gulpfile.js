@@ -41,7 +41,7 @@ gulp.task('serve', ['js', 'sass'], () => {
     port: 8000,
     files: ['public/**/*.*'],
     reloadDelay: 500,
-    notfity: false,
+    notify: false,
     open: false
   });
 
