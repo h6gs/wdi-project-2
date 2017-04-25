@@ -1,10 +1,29 @@
 <div class="container">
   <h1><%= medium.name %></h1>
   <img class="responsive-img" src="<%= medium.images %>">
-  <p><%= medium.synopsis %></p>
-  <form action="/media/<%= medium.id %>" method="post" class="">
-    <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
-    <input type="hidden" name="_method" value="delete">
-    <button class="btn red">Delete</button>
+  <h4>IMDb Rating</h4>
+  <%= medium.imdbRating %>
+  <h4>Synopsis</h4>
+  <%= medium.synopsis %>
+  <h4>Release Date</h4>
+  <%= medium.releaseDate %>
+  <h4>Genre</h4>
+  <%= medium.genre %>
+  <form method="POST" action="/media/<%= medium.id %>/comments">
+    <div class="form-group">
+      <label for="body">Please leave a comment</label>
+      <textarea id="body" name="body" class="form-control"></textarea>
+    </div>
+    <input type="submit" class="btn">
   </form>
-</div>
+  <ul>
+    <% medium.comments.forEach(comment => { %>
+      <li><a href="/user/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
+      <% }) %>
+  </ul>
+    <form action="/media/<%= medium.id %>" method="post" class="">
+      <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn red">Delete</button>
+    </form>
+  </div>

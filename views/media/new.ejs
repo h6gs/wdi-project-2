@@ -1,5 +1,10 @@
 <div class="container">
-  <h1>Create</h1>
+  <h1>Add Media</h1>
+  <form name="searchMedia" id="searchMedia">
+    <label>Hyper Search</label>
+    <input type="text">
+    <input type="submit" onclick="" class="btn btn-success" value="Auto Fill">
+  </form>
   <form action="/media" method="post">
     <div class="form-group">
       <label for="name">Name</label>
@@ -8,24 +13,24 @@
 
     <div class="form-group">
       <label for="releaseDate">Release Date</label>
-      <input class="form-control" type="text" name="releaseDate" value="">
+      <input id='imdbReleased' class="form-control" type="text" name="releaseDate" value="">
     </div>
 
     <div class="form-group">
       <label for="genre">Genre</label>
-      <input class="form-control" type="text" name="genre" value="">
+      <input id='imdbGenre'class="form-control" type="text" name="genre" value="">
     </div>
 
     <div class="form-group">
       <label for="images">Image</label>
-      <input class="form-control" type="text" name="images" value="">
+      <input id='imdbPoster'class="form-control" type="text" name="images" value="">
     </div>
 
     <div class="form-group">
       <label for="synopsis">Synopsis</label>
-      <textarea class="" name="synopsis" value=""></textarea>
+      <textarea id='imdbPlot'class="" name="synopsis" value=""></textarea>
     </div>
 
-    <input class="btn btn-success" type="submit" value="Add Media!">
+    <input class="btn btn-success" type="submit" value="Add">
   </form>
 </div>

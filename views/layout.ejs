@@ -20,7 +20,7 @@
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/media">Home</a></li>
-          <li><a href="/media/new">Add Show/Film</a></li>
+          <li><a href="/media/new">Add Media</a></li>
 
           <% if(locals.isLoggedIn) { %>
             <li class="nav-item">
@@ -36,11 +36,6 @@
               <% } %>
             </div>
           </nav>
-          <form name="searchMedia" id="searchMedia">
-            <label>Search Media</label>
-            <input type="text">
-            <input type="submit" onclick="" value="Go!">
-          </form>
         </header>
         <main>
           <%- body %>

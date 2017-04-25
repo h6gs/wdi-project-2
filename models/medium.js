@@ -5,11 +5,14 @@ const mediumSchema = new mongoose.Schema({
   releaseDate: { type: String},
   synopsis: { type: String},
   genre: {type: String},
-  comments: { type: String},
-  upVotes: { type: String},
-  downVotes: { type: String},
   imdbRating: { type: String},
-  images: [{ type: String }]
+  images: [{ type: String }],
+  comments: [{
+    body: { type: String, trim: true, required: true },
+    user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  }, {
+    timestamps: true
+  }]
 });
 
 module.exports = mongoose.model('Medium', mediumSchema);

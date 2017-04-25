@@ -1,8 +1,10 @@
-const express = require('express');
-const router  = express.Router();
-const sessionsController = require('../controllers/sessions');
+const express                 = require('express');
+const router                  = express.Router();
+const sessionsController      = require('../controllers/sessions');
 const registrationsController = require('../controllers/registrations');
-const media = require('../controllers/media');
+const media                   = require('../controllers/media');
+const comments                = require('../controllers/comments');
+
 
 function secureRoute(req, res, next){
   if (!req.session.userId){
@@ -27,6 +29,8 @@ router.route('/media/:id')
   .delete(secureRoute, media.delete);
 router.route('/media/:id/edit')
   .get(secureRoute, media.edit);
+router.route('/media/:id/comments')
+    .post(secureRoute, comments.create);
 router.route('/register')
   .get(registrationsController.new)
   .post(registrationsController.create);

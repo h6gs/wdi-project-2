@@ -1,4 +1,5 @@
 const Medium = require('../models/medium');
+const Comment = require('../models/comment');
 
 function mediaIndex(req, res) {
   Medium
@@ -14,6 +15,7 @@ function mediaIndex(req, res) {
 function mediaShow(req, res) {
   Medium
     .findById(req.params.id)
+    .populate('comments.user')
     .exec()
     .then(medium => {
       if (!medium) {
@@ -28,6 +30,7 @@ function mediaShow(req, res) {
 
 function mediaNew(req, res) {
   return res.render('media/new');
+
 }
 
 function mediaCreate(req, res) {

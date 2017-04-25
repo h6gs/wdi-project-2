@@ -5,13 +5,12 @@ const mongoose          = require('mongoose');
 mongoose.Promise = require('bluebird');
 const bodyParser        = require('body-parser');
 const methodOverride    = require('method-override');
-
 const app               = express();
 const env               = require('./config/env');
-const router            = require('./config/routes.js');
 const session           = require('express-session');
-const User              = require('./models/user');
 const flash             = require('express-flash');
+const User              = require('./models/user');
+const router            = require('./config/routes.js');
 
 // Settings
 app.set('view engine', 'ejs');
@@ -47,7 +46,7 @@ app.use((req, res, next) => {
     .then(user => {
       if (!user){
         return req.session.regenerate(() => {
-          req.flash('danger','You must be logged in to see that...');
+          req.flash('Please Login');
           res.redirect('/login');
         });
       }
