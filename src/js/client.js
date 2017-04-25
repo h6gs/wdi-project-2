@@ -1,14 +1,19 @@
 console.log('hello world');
-
 $(init);
 let query;
 
 function init() {
-  $('#searchMedia').on('submit', function(e) {
+  $('#searchMedia')
+  .on('submit', function(e) {
     e.preventDefault();
     query = $('input').val();
     getMedium(query);
   });
+
+  $('.voteUp').click(function () {
+    $(this).toggleClass('on');
+  });
+
 }
 
 function getMedium(query) {
@@ -32,5 +37,3 @@ function getMedium(query) {
     console.log(`Error: ${err}`);
   });
 }
-
-// $('#imdbName').blur(getMedium(query));
