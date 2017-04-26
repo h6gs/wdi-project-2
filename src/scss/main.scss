@@ -3,7 +3,18 @@ img{
 }
 
 .brand-logo{
-  margin-left: 5%
+  margin-left: 2%
+}
+main{
+  background: black
+}
+.row{
+  background: white;
+  padding: 15px;
+  border-radius: 10px
+}
+h1{
+  color: white
 }
 
 .container{
@@ -11,10 +22,9 @@ img{
     max-height:100%;
     height:400px;
     width:250px;
-    border-top: 10px  dotted #000;
-    border-bottom: 10px  dotted #000;
-    box-shadow: 0px 0px 0px 5px #000;
+    border: 2px solid #000;
     margin: 20px 20px 20px 0;
+    border-radius: 10px;
     float:left;
   }
 }
@@ -91,4 +101,19 @@ width:300px !important;
 height:950px !important;}
 #carouselContainer{
   height:600px;
+}
+
+nav{
+  height: 90px !important;
+  line-height: 90px;
+}
+a{
+  font-size: 20px !important
+}
+.logo{
+  margin-top: 10px;
+  margin-left: 50px
+}
+.brand-logo{
+font-size: 40px!important;
 }
