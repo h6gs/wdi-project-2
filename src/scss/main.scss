@@ -40,17 +40,52 @@ label{
   float: left;
 }
 
-.voteUp {
+.voteUp{
   margin-top: 10px;
-  display: inline-block;
-  overflow: hidden;
-  width: 40px;
-  height: 25px;
   cursor: pointer;
-  background: url("/images/upVote.png");
-  background-position: 0 -25px;
+  background-image: url("/images/upVote.png");
+  background-size: 80px 120px;
+  background-repeat: no-repeat;
+  height: 150px;
+  opacity: 0.5;
+
 }
 
-.voteUp.on {
-  background-position: 0 2px;
+.voteDown{
+  margin-top: 10px;
+  cursor: pointer;
+  background-image: url("/images/downVote.png");
+  background-size: 80px 120px;
+  background-repeat: no-repeat;
+  height: 150px;
+  opacity: 0.5;
+}
+
+.voteUp:hover,.voteDown:hover {
+  opacity: 1;
+}
+
+
+#container
+{
+    height:400px;
+    width:400px;
+    position:relative;
+}
+
+#image
+{
+    position:absolute;
+    left:0;
+    top:0;
+}
+#text
+{
+    z-index:100;
+    position:absolute;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    left:150px;
+    top:350px;
 }

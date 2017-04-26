@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const mediumSchema = new mongoose.Schema({
   name: { type: String },
+  score: { type: Number},
   releaseDate: { type: String},
   synopsis: { type: String},
   genre: {type: String},

@@ -34,6 +34,7 @@ function mediaNew(req, res) {
 }
 
 function mediaCreate(req, res) {
+  console.log(req.body);
   Medium
     .create(req.body)
     .then(medium => {
@@ -58,6 +59,31 @@ function mediaEdit(req, res) {
    .catch(err => {
      return res.render('error', { error: err });
    });
+}
+
+function mediaScoreEdit(req, res) {
+  // console.log(req.body);
+  // console.log(req.params);
+  Medium
+    .findById(req.params.id)
+    .exec()
+    .then(medium => {
+      if (!medium) {
+        return res.render('error', { error: 'No medium found.' });
+      }
+      medium.score = req.body.score;
+      console.log(medium);
+      return medium.save();
+    })
+    .then(medium => {
+      if (!medium) {
+        return res.render('error', { error: 'Something went wrong during the update.' });
+      }
+      return res.render('media/show', { medium });
+    })
+    .catch(err => {
+      return res.render('error', { error: err });
+    });
 }
 
 function mediaUpdate(req, res) {
@@ -104,5 +130,6 @@ module.exports = {
   create: mediaCreate,
   edit: mediaEdit,
   update: mediaUpdate,
-  delete: mediaDelete
+  delete: mediaDelete,
+  scoreEdit: mediaScoreEdit
 };

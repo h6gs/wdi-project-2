@@ -1,8 +1,12 @@
-console.log('hello world');
 $(init);
 let query;
+// let scoreFig =
+let score;
+
 
 function init() {
+  score = $('#info').text();
+  console.log(score);
   $('#searchMedia')
   .on('submit', function(e) {
     e.preventDefault();
@@ -10,10 +14,30 @@ function init() {
     getMedium(query);
   });
 
-  $('.voteUp').click(function () {
-    $(this).toggleClass('on');
+  $('.voteUp').on('click', function(){
+    score ++;
+    $('#info').text(score);
+    var url = window.location.pathname;
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    console.log(id);
+    $.post(`${window.location.origin}/media/${id}`, { score });
+    console.log(score, 'hi');
   });
 
+  $('.voteDown').on('click', function(){
+    score --;
+    $('#info').text(score);
+    var url = window.location.pathname;
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    console.log(id);
+    $.post(`${window.location.origin}/media/${id}`, { score });
+  });
+
+  // $.ajax({
+  //   type: 'POST',
+  //   data: score,
+  //   url: '/create'
+  // });
 }
 
 function getMedium(query) {

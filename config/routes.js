@@ -9,7 +9,7 @@ const comments                = require('../controllers/comments');
 function secureRoute(req, res, next){
   if (!req.session.userId){
     return req.session.regenerate(() => {
-      req.flash('danger','Please Log In');
+      req.flash('Please Log In');
       res.redirect('/login');
     });
   }
@@ -25,6 +25,7 @@ router.route('/media/new')
   .get(secureRoute, media.new);
 router.route('/media/:id')
   .get(media.show)
+  .post(media.scoreEdit)
   .put(secureRoute, media.update)
   .delete(secureRoute, media.delete);
 router.route('/media/:id/edit')

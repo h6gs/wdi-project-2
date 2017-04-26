@@ -1,5 +1,11 @@
 <div class="container">
-  <p>Click to vote: <span class="voteUp"> </span><p>
+  <div class="voting">
+    <div class="voteUp"></div>
+    <p id="info"><%= medium.score %></p>
+    <div class="voteDown"></div>
+  </div>
+
+
   <h1><%= medium.name %></h1>
   <img class="responsive-img" src="<%= medium.images %>">
   <h4>IMDb Rating</h4>
@@ -21,10 +27,22 @@
     <% medium.comments.forEach(comment => { %>
       <li><a href="/user/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
       <% }) %>
-  </ul>
+    </ul>
     <form action="/media/<%= medium.id %>" method="post" class="">
       <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
       <input type="hidden" name="_method" value="delete">
       <button class="btn red">Delete</button>
     </form>
+
+
+
+    <div id="container">
+      <img id="image" src="http://www.noao.edu/image_gallery/images/d4/androa.jpg"/>
+      <p id="text">
+        yes
+        <div class="voteUp"></div>
+        <p id="info"><%= medium.score %></p>
+        <div class="voteDown"></div>
+      </p>
+    </div>
   </div>
