@@ -44,7 +44,13 @@ function init() {
     $(`#${scoreCounter}score`).text(score);
     $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
   });
-  $('.carousel').carousel();
+  $('.carousel').carousel({
+  });
+  autoplay();
+  function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 4000);
+  }
 }
 
 function getMedium(query) {
