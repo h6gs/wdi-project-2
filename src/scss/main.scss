@@ -39,7 +39,7 @@ img{
   position:relative;
 }
 
-#upVote{
+.upVote{
   cursor: pointer;
   z-index:100;
   position:absolute;
@@ -51,7 +51,7 @@ img{
   top:50px;
   opacity: 0.5;
 }
-#downVote{
+.downVote{
   cursor: pointer;
   z-index:100;
   position:absolute;
@@ -63,7 +63,7 @@ img{
   top:250px;
   opacity: 0.5;
 }
-#textScore{
+.textScore {
   z-index:100;
   position:absolute;
   background-size: 80px 120px;
@@ -76,7 +76,7 @@ img{
   left:100px;
   top:175px;
 }
-#downVote:hover, #upVote:hover{
+.downVote:hover, .upVote:hover{
   opacity: 1;
 }
 

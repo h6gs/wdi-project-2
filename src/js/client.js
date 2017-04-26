@@ -1,12 +1,8 @@
 $(init);
 let query;
-// let scoreFig =
-let score;
-
 
 function init() {
-  score = $('#textScore').text();
-  console.log(score);
+
   $('#searchMedia')
   .on('submit', function(e) {
     e.preventDefault();
@@ -14,28 +10,20 @@ function init() {
     getMedium(query);
   });
 
-  $('#upVote').on('click', function(){
+  $('.upVote').on('click', function(e){
+    const scoreCounter = $(e.target).attr('data-target');
+    let score = $(`#${scoreCounter}score`).text();
     score++;
-    $('#textScore').text(score);
-    var url = window.location.pathname;
-    var id = url.substring(url.lastIndexOf('/') + 1);
-    console.log(id);
-    $.post(`${window.location.origin}/media/${id}`, { score })
-    .done(data => {
-      console.log('success', data);
-    })
-    .fail(data => {
-      console.log('fail', data);
-    });
+    $(`#${scoreCounter}score`).text(score);
+    $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
   });
 
-  $('#downVote').on('click', function(){
+  $('.downVote').on('click', function(e){
+    const scoreCounter = $(e.target).attr('data-target');
+    let score = $(`#${scoreCounter}score`).text();
     score --;
-    $('#textScore').text(score);
-    var url = window.location.pathname;
-    var id = url.substring(url.lastIndexOf('/') + 1);
-    console.log(id);
-    $.post(`${window.location.origin}/media/${id}`, { score });
+    $(`#${scoreCounter}score`).text(score);
+    $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
   });
 }
 

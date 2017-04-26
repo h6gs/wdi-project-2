@@ -8,12 +8,12 @@
         <a href="/media/<%= medium.id %>">
         <img id="image" src="<%= medium.images %>"/>
         </a>
-        <p id="upVote">
+        <p class="upVote" data-target="<%= medium.id %>">
         </p>
-        <p id="textScore">
+        <p class="textScore" id="<%= medium.id %>score">
         <%= medium.score %>
         </p>
-        <p id="downVote">
+        <p class="downVote" data-target="<%= medium.id %>">
         </p>
         </div>
         </div>

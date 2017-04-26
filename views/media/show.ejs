@@ -1,14 +1,16 @@
 <div class="container">
+  <% if (locals.isLoggedIn) { %>
+    <p style="display:none" id="currentUserId"><%= locals.user.id %></p>
+  <%} %>
+
   <h1><%= medium.name %></h1>
   <div class="voteContainer">
-    <img id="image" src="<%= medium.images %>"/>
-    <p id="upVote">
-    </p>
-    <p id="textScore">
+    <img class="image" src="<%= medium.images %>"/>
+    <p class="upVote" data-target="<%= medium.id %>"></p>
+    <p class="textScore" id="<%= medium.id %>score">
       <%= medium.score %>
     </p>
-    <p id="downVote">
-    </p>
+    <p class="downVote" data-target="<%= medium.id %>"></p>
   </div>
   <div id="contentContainer">
     <h4>IMDb Rating</h4>
