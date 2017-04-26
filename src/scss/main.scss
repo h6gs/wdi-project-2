@@ -17,11 +17,6 @@ img{
     margin: 20px 20px 20px 0;
     float:left;
   }
-  img:hover{
-    margin-right: 20px;
-    border-bottom: 10px  solid red;
-    border-top: 10px  solid green;
-  }
 }
 
 #thumb{
@@ -36,56 +31,55 @@ img{
 .btn-success{
   margin: 10px 0px;
 }
-label{
-  float: left;
+#contentContainer{
+  margin-bottom:80px;
 }
 
-.voteUp{
-  margin-top: 10px;
+.voteContainer {
+  position:relative;
+}
+
+#upVote{
   cursor: pointer;
+  z-index:100;
+  position:absolute;
   background-image: url("/images/upVote.png");
   background-size: 80px 120px;
-  background-repeat: no-repeat;
-  height: 150px;
+  height: 120px;
+  width: 80px;
+  left:80px;
+  top:50px;
   opacity: 0.5;
-
 }
-
-.voteDown{
-  margin-top: 10px;
+#downVote{
   cursor: pointer;
+  z-index:100;
+  position:absolute;
   background-image: url("/images/downVote.png");
   background-size: 80px 120px;
-  background-repeat: no-repeat;
-  height: 150px;
+  height: 120px;
+  width: 80px;
+  left:80px;
+  top:250px;
   opacity: 0.5;
 }
-
-.voteUp:hover,.voteDown:hover {
+#textScore{
+  z-index:100;
+  position:absolute;
+  background-size: 80px 120px;
+  width: 40px;
+  -webkit-text-stroke: 1px black;
+  color:white;
+  font-size:50px;
+  font-weight:bold;
+  text-align: center;
+  left:100px;
+  top:175px;
+}
+#downVote:hover, #upVote:hover{
   opacity: 1;
 }
 
-
-#container
-{
-    height:400px;
-    width:400px;
-    position:relative;
-}
-
-#image
-{
-    position:absolute;
-    left:0;
-    top:0;
-}
-#text
-{
-    z-index:100;
-    position:absolute;
-    color:white;
-    font-size:24px;
-    font-weight:bold;
-    left:150px;
-    top:350px;
+.comments{
+  margin: 30px
 }

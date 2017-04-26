@@ -1,48 +1,42 @@
 <div class="container">
-  <div class="voting">
-    <div class="voteUp"></div>
-    <p id="info"><%= medium.score %></p>
-    <div class="voteDown"></div>
-  </div>
-
-
   <h1><%= medium.name %></h1>
-  <img class="responsive-img" src="<%= medium.images %>">
-  <h4>IMDb Rating</h4>
-  <%= medium.imdbRating %>
-  <h4>Synopsis</h4>
-  <%= medium.synopsis %>
-  <h4>Release Date</h4>
-  <%= medium.releaseDate %>
-  <h4>Genre</h4>
-  <%= medium.genre %>
+  <div class="voteContainer">
+    <img id="image" src="<%= medium.images %>"/>
+    <p id="upVote">
+    </p>
+    <p id="textScore">
+      <%= medium.score %>
+    </p>
+    <p id="downVote">
+    </p>
+  </div>
+  <div id="contentContainer">
+    <h4>IMDb Rating</h4>
+    <%= medium.imdbRating %>
+    <h4>Synopsis</h4>
+    <%= medium.synopsis %>
+    <h4>Release Date</h4>
+    <%= medium.releaseDate %>
+    <h4>Genre</h4>
+    <%= medium.genre %>
+  </div>
+  <form action="/media/<%= medium.id %>" method="post" class="">
+    <h4>Actions</h4>
+    <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
+    <input type="hidden" name="_method" value="delete">
+    <button class="btn btn-succes red">Delete</button>
+  </form>
   <form method="POST" action="/media/<%= medium.id %>/comments">
+    <h4>Comments</h4>
     <div class="form-group">
       <label for="body">Please leave a comment</label>
       <textarea id="body" name="body" class="form-control"></textarea>
     </div>
-    <input type="submit" class="btn">
+    <input type="submit" class="btn btn-succes blue">
   </form>
-  <ul>
+  <ul class="comments">
     <% medium.comments.forEach(comment => { %>
       <li><a href="/user/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
       <% }) %>
     </ul>
-    <form action="/media/<%= medium.id %>" method="post" class="">
-      <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
-      <input type="hidden" name="_method" value="delete">
-      <button class="btn red">Delete</button>
-    </form>
-
-
-
-    <div id="container">
-      <img id="image" src="http://www.noao.edu/image_gallery/images/d4/androa.jpg"/>
-      <p id="text">
-        yes
-        <div class="voteUp"></div>
-        <p id="info"><%= medium.score %></p>
-        <div class="voteDown"></div>
-      </p>
-    </div>
   </div>

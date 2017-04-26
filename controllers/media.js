@@ -79,10 +79,11 @@ function mediaScoreEdit(req, res) {
       if (!medium) {
         return res.render('error', { error: 'Something went wrong during the update.' });
       }
-      return res.render('media/show', { medium });
+      // return res.render('media/show', { medium });
+      return res.status(200).json({medium});
     })
     .catch(err => {
-      return res.render('error', { error: err });
+      return res.status(200).json({error: err});
     });
 }
 

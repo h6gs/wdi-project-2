@@ -4,10 +4,18 @@
     <ul>
       <% media.forEach(medium => { %>
         <div class="col s4">
+        <div class="voteContainer">
         <a href="/media/<%= medium.id %>">
-        <li><%= medium.name %></li>
-        <li><img class="responsive-img" src="<%= medium.images %>"></li>
+        <img id="image" src="<%= medium.images %>"/>
         </a>
+        <p id="upVote">
+        </p>
+        <p id="textScore">
+        <%= medium.score %>
+        </p>
+        <p id="downVote">
+        </p>
+        </div>
         </div>
         <% }); %>
       </ul>
