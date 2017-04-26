@@ -3,6 +3,7 @@ let query;
 
 function init() {
 
+
   $('#searchMedia')
   .on('submit', function(e) {
     e.preventDefault();
