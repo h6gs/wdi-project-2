@@ -2,8 +2,11 @@
   <h1>Media Home</h1>
   <div class="row">
     <ul>
+      <% media.sort((a, b) => { %>
+        <% return b.score - a.score; %>
+        <%  }) %>
       <% media.forEach(medium => { %>
-        <div class="col s4" id="<%= medium.id %>">
+        <div class="col s4" data-target="<%= medium.id %>">
           <div class="voteContainer">
             <a href="/media/<%= medium.id %>">
             <img id="image" src="<%= medium.images %>"/>

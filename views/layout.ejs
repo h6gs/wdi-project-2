@@ -12,7 +12,7 @@
 </head>
 <body>
   <header>
-    <nav class="nav-extended">
+    <nav class="nav-extended black">
       <div class="nav-wrapper">
         <a href="/media" class="brand-logo">HypeFlix</a>
 
@@ -20,12 +20,16 @@
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/media">Home</a></li>
-          <li><a href="/media/new">Add Media</a></li>
+
 
           <% if(locals.isLoggedIn) { %>
             <li class="nav-item">
+            <a href="/media/new">Add Media</a>
+            </li>
+            <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
             </li>
+
             <% } else { %>
               <li class="nav-item">
               <a class="nav-link" href="/login">Log In</a>

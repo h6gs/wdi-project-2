@@ -16,7 +16,13 @@ function init() {
     let score = $(`#${scoreCounter}score`).text();
     score++;
     $(`#${scoreCounter}score`).text(score);
-    $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
+    $.post(`${window.location.origin}/media/${scoreCounter}`, { score })
+    .done( score => {
+      console.log('sucess', score.medium.score);
+    })
+    .fail(score => {
+      console.log('fail',score.medium.score);
+    });
   });
 
   $('.downVote').on('click', function(e){
@@ -26,6 +32,7 @@ function init() {
     $(`#${scoreCounter}score`).text(score);
     $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
   });
+
 }
 
 function getMedium(query) {
