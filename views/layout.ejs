@@ -4,22 +4,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>HypeFlix</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
   <script src="/js/client.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
   <header>
     <nav class="nav-extended black">
       <div class="nav-wrapper">
         <a href="/media" class="brand-logo">HypeFlix</a>
-
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">&#9776;</i></a>
-
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/media">Home</a></li>
+          <li><a href="/">Home</a></li>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/media">Media</a></li>
 
 
           <% if(locals.isLoggedIn) { %>

@@ -2,8 +2,6 @@ $(init);
 let query;
 
 function init() {
-
-
   $('#searchMedia')
   .on('submit', function(e) {
     e.preventDefault();
@@ -17,11 +15,25 @@ function init() {
     score++;
     $(`#${scoreCounter}score`).text(score);
     $.post(`${window.location.origin}/media/${scoreCounter}`, { score })
-    .done( score => {
-      console.log('sucess', score.medium.score);
-    })
-    .fail(score => {
-      console.log('fail',score.medium.score);
+    // .done( score => {
+    //   // console.log(score.medium)
+    //
+    //   function deleteMedia() {
+    //     // $('.dispose').remove();
+    //   }
+    //   function addMedia() {
+    //     console.log(score.medium)
+    //     $('<div class="dispose"></div>').appendTo($('.wrapper'));
+    //     score.medium.forEach(media => {
+    //       $('.dispose').append($(`<div class="col s4" data-target="${media.id}"><div class="voteContainer"><a href="/media/${media.id}"><img id="image" src="${media.images}"/></a><p class="upVote" data-target="${media.id}"></p><p class="textScore" id="${media.id}score"><p class="downVote" data-target="${media.id}"></p>`));
+    //     });
+    //   }
+    //   deleteMedia();
+    //   addMedia();
+    //   console.log('sucess', score.medium.score);
+    // })
+    .fail(err => {
+      return(`Error: ${err}`);
     });
   });
 
@@ -32,14 +44,13 @@ function init() {
     $(`#${scoreCounter}score`).text(score);
     $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
   });
-
+  $('.carousel').carousel();
 }
 
 function getMedium(query) {
   $
   .get(`http://www.omdbapi.com/?t=${query}`)
   .done(data => {
-    console.log(data);
     $('#imdbName').val(data.Title);
     $('#imdbReleased').val(data.Released);
     $('#imdbGenre').val(data.Genre);
@@ -53,6 +64,6 @@ function getMedium(query) {
     img.prependTo($('.container'));
   })
   .fail(err => {
-    console.log(`Error: ${err}`);
+    return(`Error: ${err}`);
   });
 }

@@ -1,23 +1,46 @@
+
+
 <div class="container">
   <h1>Media Home</h1>
   <div class="row">
-    <ul>
-      <% media.sort((a, b) => { %>
-        <% return b.score - a.score; %>
-        <%  }) %>
-      <% media.forEach(medium => { %>
-        <div class="col s4" data-target="<%= medium.id %>">
-          <div class="voteContainer">
-            <a href="/media/<%= medium.id %>">
-            <img id="image" src="<%= medium.images %>"/>
-            </a>
-            <p class="upVote" data-target="<%= medium.id %>"></p>
-            <p class="textScore" id="<%= medium.id %>score">
-            <%= medium.score %></p>
-            <p class="downVote" data-target="<%= medium.id %>"></p>
+    <div class="wrapper">
+      <div class="dispose">
+        <ul>
+          <% media.sort((a, b) => { %>
+            <% return b.score - a.score; %>
+            <%  }) %>
+            <% media.forEach(medium => { %>
+              <div class="col s4" data-target="<%= medium.id %>">
+              <div class="voteContainer">
+              <a href="/media/<%= medium.id %>">
+              <img id="image" src="<%= medium.images %>"/>
+              </a>
+              <p class="upVote" data-target="<%= medium.id %>"></p>
+              <p class="textScore" id="<%= medium.id %>score">
+              <%= medium.score %></p>
+              <p class="downVote" data-target="<%= medium.id %>"></p>
+              </div>
+              </div>
+              <% }); %>
+            </ul>
           </div>
         </div>
-        <% }); %>
-      </ul>
+      </div>
     </div>
-  </div>
+    <div class="container" id="carouselContainer">
+    <div class="carousel">
+    <% media.forEach(medium => { %>
+      <div class="carousel-item" data-target="<%= medium.id %>">
+      <div class="voteContainer">
+      <a href="/media/<%= medium.id %>">
+      <img id="image" src="<%= medium.images %>"/>
+      </a>
+      <p class="upVote" data-target="<%= medium.id %>"></p>
+      <p class="textScore" id="<%= medium.id %>score">
+      <%= medium.score %></p>
+      <p class="downVote" data-target="<%= medium.id %>"></p>
+      </div>
+      </div>
+      <% }); %>
+      </div>
+      </div>
