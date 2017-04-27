@@ -42,6 +42,7 @@ function getMedium(query) {
   .get(`http://www.omdbapi.com/?t=${query}`)
   .done(data => {
     $('#imdbName').val(data.Title);
+    $('#imdbRating').val(data.imdbRating);
     $('#imdbReleased').val(data.Released);
     $('#imdbGenre').val(data.Genre);
     $('#imdbPoster').val(data.Poster);

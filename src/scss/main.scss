@@ -27,6 +27,7 @@ h1,h2,h3,h4,p,input,textarea{
     margin: 20px 20px 20px 0;
     border-radius: 10px;
     float:left;
+    box-shadow: 0px 0px 0px 3px white;
   }
 }
 
@@ -169,4 +170,8 @@ nav{
 .textScore{
   left: 100px;
 }
+}
+
+form{
+  padding-bottom: 50px;
 }
