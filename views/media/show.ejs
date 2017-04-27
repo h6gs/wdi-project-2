@@ -1,8 +1,4 @@
 <div class="container">
-  <% if (locals.isLoggedIn) { %>
-    <p><%= locals.user.id %></p>
-  <%} %>
-
   <h1><%= medium.name %></h1>
   <div class="voteContainer">
     <img class="image" src="<%= medium.images %>"/>
@@ -14,31 +10,39 @@
   </div>
   <div id="contentContainer">
     <h4>IMDb Rating</h4>
-    <%= medium.imdbRating %>
+    <p><%= medium.imdbRating %></p>
     <h4>Synopsis</h4>
-    <%= medium.synopsis %>
+    <p><%= medium.synopsis %></p>
     <h4>Release Date</h4>
-    <%= medium.releaseDate %>
+    <p><%= medium.releaseDate %></p>
     <h4>Genre</h4>
-    <%= medium.genre %>
+    <p><%= medium.genre %></p>
   </div>
-  <form action="/media/<%= medium.id %>" method="post" class="">
-    <h4>Actions</h4>
-    <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
-    <input type="hidden" name="_method" value="delete">
-    <button class="btn btn-succes red">Delete</button>
-  </form>
-  <form method="POST" action="/media/<%= medium.id %>/comments">
-    <h4>Comments</h4>
-    <div class="form-group">
-      <label for="body">Please leave a comment</label>
-      <textarea id="body" name="body" class="form-control"></textarea>
-    </div>
-    <input type="submit" class="btn btn-succes blue">
-  </form>
-  <ul class="comments">
-    <% medium.comments.forEach(comment => { %>
-      <li><a href="/user/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
-      <% }) %>
-    </ul>
+
+  <% if(locals.isLoggedIn) { %>
+    <form action="/media/<%= medium.id %>" method="post" class="">
+      <h4>Actions</h4>
+      <a class="btn btn-success" href="/media/<%= medium.id %>/edit">Edit</a>
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn btn-succes red">Delete</button>
+    </form>
+    <form method="POST" action="/media/<%= medium.id %>/comments">
+      <h4>Comments</h4>
+      <div class="form-group">
+        <label for="body">Please leave a comment</label>
+        <textarea id="body" name="body" class="form-control"></textarea>
+      </div>
+      <input type="submit" class="btn btn-succes blue">
+    </form>
+    <ul class="comments">
+      <% medium.comments.forEach(comment => { %>
+        <li><a href="/user/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
+        <% }) %>
+      </ul>
+
+    <% } else { %>
+      <% } %>
+
+
+
   </div>

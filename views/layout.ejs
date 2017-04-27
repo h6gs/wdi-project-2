@@ -10,47 +10,59 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="/js/client.js" charset="utf-8"></script>
   <link rel="stylesheet" href="/css/main.css">
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 </head>
 <body>
   <header>
-    <nav class="nav-extended black">
+    <nav class="nav-extended">
       <div class="nav-wrapper">
         <img src="/images/logo.png" height="70px" class="logo">
         <a href="/media" class="brand-logo">HypeFlix</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse">
-        <i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class ="fade" href="/">Home</a></li>
-          <li><a class ="fade" href="/media">Media</a></li>
-          <% if(locals.isLoggedIn) { %>
-            <li><a class ="fade" href="/media/new">Add Media</a></li>
-            <li><a class ="fade" href="/logout">Logout</a></li>
-            <% } else { %>
-              <li><a class ="fade" href="/login">Log In</a></li>
-              <li><a class ="fade" href="/register">Register</a></li>
-              <% } %>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-              <li><a href="/">Home</a></li>
-              <li><a href="/media">Media</a></li>
-              <% if(locals.isLoggedIn) { %>
-                <li><a href="/media/new">Add Media</a></li>
-                <li><a href="/logout">Logout</a></li>
+          <i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class ="fade" href="/">Home</a></li>
+            <li><a class ="fade" href="/media">Media</a></li>
+            <% if(locals.isLoggedIn) { %>
+              <li><a class ="fade" href="/media/new">Add Media</a></li>
+              <li><a class ="fade" href="/logout">Logout</a></li>
+              <% } else { %>
+                <li><a class ="fade" href="/login">Log In</a></li>
+                <li><a class ="fade" href="/register">Register</a></li>
+                <% } %>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="/">Home</a></li>
+                <li><a href="/media">Media</a></li>
+                <% if(locals.isLoggedIn) { %>
+                  <li><a href="/media/new">Add Media</a></li>
+                  <li><a href="/logout">Logout</a></li>
 
-                <% } else { %>
-                  <li><a href="/login">Log In</a></li>
-                  <li><a href="/register">Register</a></li>
-                  <% } %>
-                </ul>
+                  <% } else { %>
+                    <li><a href="/login">Log In</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </nav>
+            </header>
+            <main>
+              <%- body %>
+            </main>
+            <footer class="page-footer black">
+              <div class="footer-copyright">
+                <div class="row" style="width: 80%;">
+                  <ul>
+                      <li class="col col s3"><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                      <li class="col col s3"><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                      <li class="col col s3"><a class="grey-text text-lighten-3" href="#!">Legal</a></li>
+                      <li class="col col s3"><a class="grey-text text-lighten-3" href="#!">© 2017 Harry Stirling</a></li>
+
+                  </ul>
+
+                </div>
               </div>
-            </nav>
-          </header>
-          <main>
-            <%- body %>
-          </main>
-          <footer>
-            Hello
-          </footer>
-        </body>
-        </html>
+            </footer>
+
+          </body>
+          </html>
