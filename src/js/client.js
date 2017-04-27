@@ -51,7 +51,7 @@ function getMedium(query) {
       id: 'thumb',
       src: data.Poster
     });
-    $('img').remove();
+    $('#thumb').remove();
     img.prependTo($('.container'));
   })
   .fail(err => {
