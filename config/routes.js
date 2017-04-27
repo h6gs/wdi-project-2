@@ -17,9 +17,9 @@ function secureRoute(req, res, next){
 }
 
 
-router.get('/', (req, res) => res.render('statics/home'));
-router.get('/')
- .get('statics/home');
+// router.get('/', (req, res) => res.render('statics/home'));
+router.route('/')
+  .get(media.home);
 router.route('/media')
   .get(media.index)
   .post(media.create);

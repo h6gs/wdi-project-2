@@ -1,6 +1,18 @@
 const Medium = require('../models/medium');
 const Comment = require('../models/comment');
 
+
+function mediaHome(req, res) {
+  Medium
+    .find()
+    .then(media => {
+      return res.render('statics/home', { media });
+    })
+    .catch(err => {
+      return res.render('error', { error: err });
+    });
+}
+
 function mediaIndex(req, res) {
   Medium
     .find()
@@ -132,5 +144,6 @@ module.exports = {
   edit: mediaEdit,
   update: mediaUpdate,
   delete: mediaDelete,
-  scoreEdit: mediaScoreEdit
+  scoreEdit: mediaScoreEdit,
+  home: mediaHome
 };

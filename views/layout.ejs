@@ -18,35 +18,38 @@
       <div class="nav-wrapper">
         <img src="/images/logo.png" height="70px" class="logo">
         <a href="/media" class="brand-logo">HypeFlix</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
           <li><a href="/">Home</a></li>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/media">Media</a></li>
-
-
           <% if(locals.isLoggedIn) { %>
-            <li class="nav-item">
-            <a href="/media/new">Add Media</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-            </li>
+            <li><a href="/media/new">Add Media</a></li>
+            <li><a href="/logout">Logout</a></li>
 
             <% } else { %>
-              <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/register">Register</a>
-              </li>
+              <li><a href="/login">Log In</a></li>
+              <li><a href="/register">Register</a></li>
               <% } %>
-            </div>
-          </nav>
-        </header>
-        <main>
-          <%- body %>
-        </main>
-        <footer>
-        </footer>
-      </body>
-      </html>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="/">Home</a></li>
+          <li><a href="/media">Media</a></li>
+          <% if(locals.isLoggedIn) { %>
+            <li><a href="/media/new">Add Media</a></li>
+            <li><a href="/logout">Logout</a></li>
+
+            <% } else { %>
+              <li><a href="/login">Log In</a></li>
+              <li><a href="/register">Register</a></li>
+              <% } %>
+        </ul>
+      </div>
+    </nav>
+          </header>
+          <main>
+            <%- body %>
+          </main>
+          <footer>
+          </footer>
+        </body>
+        </html>

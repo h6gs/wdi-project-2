@@ -15,23 +15,6 @@ function init() {
     score++;
     $(`#${scoreCounter}score`).text(score);
     $.post(`${window.location.origin}/media/${scoreCounter}`, { score })
-    // .done( score => {
-    //   // console.log(score.medium)
-    //
-    //   function deleteMedia() {
-    //     // $('.dispose').remove();
-    //   }
-    //   function addMedia() {
-    //     console.log(score.medium)
-    //     $('<div class="dispose"></div>').appendTo($('.wrapper'));
-    //     score.medium.forEach(media => {
-    //       $('.dispose').append($(`<div class="col s4" data-target="${media.id}"><div class="voteContainer"><a href="/media/${media.id}"><img id="image" src="${media.images}"/></a><p class="upVote" data-target="${media.id}"></p><p class="textScore" id="${media.id}score"><p class="downVote" data-target="${media.id}"></p>`));
-    //     });
-    //   }
-    //   deleteMedia();
-    //   addMedia();
-    //   console.log('sucess', score.medium.score);
-    // })
     .fail(err => {
       return(`Error: ${err}`);
     });
@@ -50,6 +33,7 @@ function init() {
     $('.carousel').carousel('next');
     setTimeout(autoplay, 4000);
   }
+  $('.button-collapse').sideNav();
 }
 
 function getMedium(query) {
