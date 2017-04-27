@@ -1,0 +1,105 @@
+img{
+  display: inline-block;
+}
+.row{
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 50px
+}
+.container{
+  img{
+    max-height:100%;
+    height:400px;
+    width:250px;
+    border: 2px solid #000;
+    margin: 20px 20px 20px 0;
+    border-radius: 10px;
+    float:left;
+    box-shadow: 0px 0px 0px 3px white;
+  }
+}
+
+#thumb{
+  float: left;
+  height:200px;
+  width:135px;
+  margin: 20px 15px 15px 5px;
+  box-shadow: 0px 0px 0px 3px white;
+}
+#contentContainer{
+  margin-bottom:80px;
+}
+
+.voteContainer {
+  position:relative;
+}
+
+.upVote{
+  cursor: pointer;
+  z-index:100;
+  position:absolute;
+  background-image: url("/images/upVote.png");
+  background-size: 60px 60px;
+  height: 60px;
+  width: 60px;
+  left:100px;
+  top:120px;
+  opacity: 0.5;
+  transition: .5s ease-in-out;
+}
+.downVote{
+  cursor: pointer;
+  z-index:100;
+  position:absolute;
+  background-image: url("/images/downVote.png");
+  background-size: 60px 60px;
+  height: 60px;
+  width: 60px;
+  left:100px;
+  top:270px;
+  opacity: 0.5;
+  transition: .5s ease-in-out;
+}
+.textScore {
+  z-index:100;
+  position:absolute;
+  background-size: 120px 120px;
+  color:white;
+  font-size:45px;
+  font-weight:bold;
+  text-align: center;
+  left:85px;
+  top:190px;
+  width: 95px;
+  opacity: 1;
+}
+.downVote:hover, .upVote:hover{
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.carousel .carousel-item {
+  margin-top: 270px !important;
+  margin-bottom: 270px !important;
+  width:300px !important;
+  height:950px !important;
+}
+#carouselContainer{
+  height:600px;
+}
+.homeContainer{
+  padding-top: 50px;
+}
+body{
+  background-image: url("/images/background.jpg");
+}
+
+#carouselContainer{
+  .downVote,.upVote{
+    left: 120px;
+  }
+  .textScore{
+    left: 100px;
+  }
+}
