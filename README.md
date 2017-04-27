@@ -6,25 +6,25 @@ HypeFlix is a film & tv-show site that combines the IMDb database with a reddit 
 
 The homepage (below) is an intractable and automatic carousel that displays all of the media library and you can up or down vote without leaving home. 
 
-![](public/images/home.png) 
+![](src/images/home.png) 
 
 Media home is a static display of all the media that has been indexed and is descendingly sorted from it's Hype Score. 
 
-![](public/images/media.png) 
+![](src/images/media.png) 
  
 Adding media on HypeFlix is really simple and just requires the user to enter the title and the auto-fill will retrive the rest. 
  
-![](public/images/addMedia.png) 
+![](src/images/addMedia.png) 
 
 Registering for HypeFlix is quick and once logged in you have access to the add + edit actions & vote functions. 
 
-![](public/images/register.png) 
+![](src/images/register.png) 
 
 #Planning Overview
 
 Prior to the build I made a few slides to get an idea of how I was actually going to display the site and although slightly different from my final product it helped me all the same to begin a mental checklist of steps I'd need to do to get it done.
 
-![](public/images/planning.jpg) 
+![](src/images/planning.jpg) 
 
 #Code Overview
 
