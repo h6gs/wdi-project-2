@@ -70,7 +70,7 @@ img{
   font-weight:bold;
   text-align: center;
   left:85px;
-  top:190px;
+  top:160px;
   width: 95px;
   opacity: 1;
 }
@@ -98,8 +98,10 @@ body{
 #carouselContainer{
   .downVote,.upVote{
     left: 120px;
+
   }
   .textScore{
     left: 100px;
+    top:160px;
   }
 }
