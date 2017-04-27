@@ -4,7 +4,9 @@
 img{
   display: inline-block;
 }
-
+h1,h2,h3,h4,p,input,textarea{
+  color: white;
+}
 .brand-logo{
   margin-left: 10px
 }
@@ -14,9 +16,7 @@ img{
   border-radius: 10px;
   margin-bottom: 50px
 }
-h1,h2,h3,h4,p,input,textarea{
-  color: white;
-}
+
 
 .container{
   img{
@@ -94,7 +94,7 @@ h1,h2,h3,h4,p,input,textarea{
 }
 
 .comments{
-  margin: 30px
+  margin: 0px 0px 50px 50px
 }
 
 .carousel .carousel-item {
@@ -164,12 +164,12 @@ nav{
   }
 }
 #carouselContainer{
-.downVote,.upVote{
-  left: 120px;
-}
-.textScore{
-  left: 100px;
-}
+  .downVote,.upVote{
+    left: 120px;
+  }
+  .textScore{
+    left: 100px;
+  }
 }
 
 form{

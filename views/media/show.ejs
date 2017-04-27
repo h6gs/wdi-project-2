@@ -10,16 +10,16 @@
       <p class="downVote" data-target="<%= medium.id %>"></p>
     </div>
     <div id="contentContainer">
-      <h4>Hype Rating</h4>
+      <h4>Hype Score</h4>
       <p><%= medium.score %></p>
       <h4>IMDb Rating</h4>
       <p><%= medium.imdbRating %></p>
-      <h4>Synopsis</h4>
-      <p><%= medium.synopsis %></p>
       <h4>Release Date</h4>
       <p><%= medium.releaseDate %></p>
       <h4>Genre</h4>
       <p><%= medium.genre %></p>
+      <h4>Synopsis</h4>
+      <p><%= medium.synopsis %></p>
     </div>
 
     <% if(locals.isLoggedIn) { %>
