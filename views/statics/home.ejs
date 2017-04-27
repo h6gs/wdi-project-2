@@ -1,18 +1,19 @@
-<h1>Homepage yall</h1>
-<div class="container" id="carouselContainer">
-  <div class="carousel">
-  <% media.forEach(medium => { %>
-    <div class="carousel-item" data-target="<%= medium.id %>">
-    <div class="voteContainer">
-    <a href="/media/<%= medium.id %>">
-    <img id="image" src="<%= medium.images %>"/>
-    </a>
-    <p class="upVote" data-target="<%= medium.id %>"></p>
-    <p class="textScore" id="<%= medium.id %>score">
-    <%= medium.score %></p>
-    <p class="downVote" data-target="<%= medium.id %>"></p>
+<div class="homeContainer">
+  <div id="carouselContainer">
+    <div class="carousel">
+      <% media.forEach(medium => { %>
+        <div class="carousel-item" data-target="<%= medium.id %>">
+        <div class="voteContainer">
+        <a href="/media/<%= medium.id %>">
+        <img id="image" src="<%= medium.images %>"/>
+        </a>
+        <p class="upVote" data-target="<%= medium.id %>"></p>
+        <p class="textScore" id="<%= medium.id %>score">
+        <%= medium.score %></p>
+        <p class="downVote" data-target="<%= medium.id %>"></p>
+        </div>
+        </div>
+        <% }); %>
+      </div>
     </div>
-    </div>
-    <% }); %>
   </div>
-</div>

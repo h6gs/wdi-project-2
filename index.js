@@ -56,7 +56,6 @@ app.use((req, res, next) => {
     });
 });
 
-
 app.use(router);
 mongoose.connect(env.db);
 app.listen(env.port, () => console.log(`Server up and running on port: ${env.port}.`));
