@@ -27,6 +27,7 @@ function init() {
     $(`#${scoreCounter}score`).text(score);
     $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
   });
+
   $('.carousel').carousel();
   autoplay();
   function autoplay() {
