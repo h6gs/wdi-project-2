@@ -3,15 +3,15 @@
     <div class="carousel">
       <% media.forEach(medium => { %>
         <div class="carousel-item" data-target="<%= medium.id %>">
-        <div class="voteContainer">
-        <a href="/media/<%= medium.id %>"><img id="image" src="<%= medium.images %>"/></a>
-        <div class="voteControls">
-        <p class="upVote" data-target="<%= medium.id %>"></p>
-        <p class="textScore" id="<%= medium.id %>score">
-        <%= medium.score %></p>
-        <p class="downVote" data-target="<%= medium.id %>"></p>
-        </div>
-        </div>
+          <div class="voteContainer">
+            <a href="/media/<%= medium.id %>"><img id="image" src="<%= medium.images %>"/></a>
+            <div class="voteControls">
+              <p class="upVote" data-target="<%= medium.id %>"></p>
+              <p class="textScore" id="<%= medium.id %>score">
+              <%= medium.score %></p>
+              <p class="downVote" data-target="<%= medium.id %>"></p>
+            </div>
+          </div>
         </div>
         <% }); %>
       </div>
