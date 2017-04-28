@@ -8,15 +8,15 @@
             <%  }) %>
             <% media.forEach(medium => { %>
               <div class="col l4 m6 s12" data-target="<%= medium.id %>">
-              <div class="voteContainer">
-              <a href="/media/<%= medium.id %>">
-              <img id="image" src="<%= medium.images %>"/>
-              </a>
-              <p class="upVote" data-target="<%= medium.id %>"></p>
-              <p class="textScore" id="<%= medium.id %>score">
-              <%= medium.score %></p>
-              <p class="downVote" data-target="<%= medium.id %>"></p>
-              </div>
+                <div class="voteContainer">
+                  <a href="/media/<%= medium.id %>">
+                    <img id="image" src="<%= medium.images %>"/>
+                  </a>
+                  <p class="upVote" data-target="<%= medium.id %>"></p>
+                  <p class="textScore" id="<%= medium.id %>score">
+                    <%= medium.score %></p>
+                  <p class="downVote" data-target="<%= medium.id %>"></p>
+                </div>
               </div>
               <% }); %>
             </ul>
