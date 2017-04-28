@@ -25,7 +25,10 @@ function init() {
     let score = $(`#${scoreCounter}score`).text();
     score --;
     $(`#${scoreCounter}score`).text(score);
-    $.post(`${window.location.origin}/media/${scoreCounter}`, { score });
+    $.post(`${window.location.origin}/media/${scoreCounter}`, { score })
+    .fail(err => {
+      return(`Error: ${err}`);
+    });
   });
 
   $('.carousel').carousel();
