@@ -8,10 +8,8 @@ const mediumSchema = new mongoose.Schema({
   genre: {type: String},
   imdbRating: { type: String},
   images: [{ type: String }],
-  comments: [{
-    body: { type: String, trim: true, required: true },
-    user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-  }, {
+  language: [{ type: mongoose.Schema.ObjectId, ref: 'Language', required: true
+  },{
     timestamps: true
   }]
 });
